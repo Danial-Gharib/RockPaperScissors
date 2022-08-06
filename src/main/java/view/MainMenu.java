@@ -3,7 +3,6 @@ package view;
 import controller.MainMenuController;
 import Enum.*;
 import java.util.Scanner;
-import java.util.regex.Matcher;
 
 public class MainMenu extends Menu{
 
@@ -18,7 +17,6 @@ public class MainMenu extends Menu{
         while (MenuName.getCurrentMenu() == MenuName.MAIN_MENU) {
             System.out.println(MenuHint.MAIN_MENU.getHint());
             String input;
-            Matcher matcher;
             input = scanner.nextLine();
             switch (input) {
                 case "1": {
