@@ -2,6 +2,7 @@ package Enum;
 
 public enum MenuName {
     MAIN_MENU,
+    USER_PANEL,
     TERMINATE;
 
     private static MenuName currentMenu = MAIN_MENU; //for starting the program
