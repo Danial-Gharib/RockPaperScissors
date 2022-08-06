@@ -1,4 +1,5 @@
 import controller.MainMenuController;
+import controller.UserController;
 import controller.UserPanelController;
 import view.MainMenu;
 import Enum.MenuName;
@@ -12,9 +13,10 @@ public class Main {
     }
 
     private static void launch() {
+        UserController.getInstance().loadUsers();
         Scanner scanner = new Scanner(System.in);
-        MainMenu mainMenu = new MainMenu(scanner , new MainMenuController());
-        UserPanel userPanel = new UserPanel(scanner , new UserPanelController());
+        MainMenu mainMenu = new MainMenu(scanner, new MainMenuController());
+        UserPanel userPanel = new UserPanel(scanner, new UserPanelController());
         while (MenuName.getCurrentMenu() != MenuName.TERMINATE) {
             mainMenu.run();
             userPanel.run();

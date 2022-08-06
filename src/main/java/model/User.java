@@ -1,6 +1,6 @@
 package model;
 
-public class User {
+public class User implements Comparable<User>{
     private String name;
     private String username;
     private String password;
@@ -62,5 +62,10 @@ public class User {
 
     public void setWinRate(float winRate) {
         this.winRate = winRate;
+    }
+
+    @Override
+    public int compareTo(User o) {
+        return o.getNoOfWins() - this.getNoOfWins();
     }
 }

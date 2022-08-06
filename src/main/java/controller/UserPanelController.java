@@ -1,4 +1,5 @@
 package controller;
+
 import Enum.*;
 import model.User;
 import view.GameView;
@@ -13,8 +14,7 @@ public class UserPanelController {
         stringBuilder.append("number of losses : " + user.getNoOfLosses() + "\n");
         if (user.getNoOfLosses() + user.getNoOfWins() == 0) {
             stringBuilder.append("win rate : N/A (have not played yet!)");
-        }
-        else {
+        } else {
             float wins = user.getNoOfWins();
             float total = user.getNoOfWins() + user.getNoOfLosses();
             stringBuilder.append("win rate : " + (wins / total) * 100 + "%");
@@ -29,9 +29,10 @@ public class UserPanelController {
     }
 
     public String play(int rounds) {
-        GameView gameView = new GameView(new Scanner(System.in) , new GameController(rounds));
+        GameView gameView = new GameView(new Scanner(System.in), new GameController(rounds));
         MenuName.setCurrentMenu(MenuName.GAME);
         gameView.run();
         return "game started with " + rounds + " rounds!";
     }
+
 }

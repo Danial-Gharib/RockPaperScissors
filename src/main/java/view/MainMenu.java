@@ -2,12 +2,14 @@ package view;
 
 import controller.MainMenuController;
 import Enum.*;
+
 import java.util.Scanner;
 
-public class MainMenu extends Menu{
+public class MainMenu extends Menu {
 
     private final MainMenuController mainMenuController;
-    public MainMenu(Scanner scanner , MainMenuController mainMenuController) {
+
+    public MainMenu(Scanner scanner, MainMenuController mainMenuController) {
         super(scanner);
         this.mainMenuController = mainMenuController;
     }

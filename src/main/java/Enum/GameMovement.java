@@ -14,6 +14,7 @@ public enum GameMovement {
     GameMovement(String movement) {
         this.movement = movement;
     }
+
     public static GameMovement getMove(String input) {
         if (input.equals("rock")) return ROCK;
         if (input.equals("paper")) return PAPER;

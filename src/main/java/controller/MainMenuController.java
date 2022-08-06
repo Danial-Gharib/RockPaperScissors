@@ -3,10 +3,13 @@ package controller;
 import Enum.MenuName;
 import model.User;
 
+import java.util.ArrayList;
+
 public class MainMenuController {
 
     public String exit() {
         MenuName.setCurrentMenu(MenuName.TERMINATE);
+        UserController.getInstance().saveUsers();
         return "program terminated!";
     }
 
@@ -34,6 +37,13 @@ public class MainMenuController {
     }
 
     public String scoreBoard() {
-        return null;
+        ArrayList<User> users = UserController.getInstance().getUsers();
+        if (users.size() == 0) return "no users yet!";
+        users.sort(User::compareTo);
+        StringBuilder stringBuilder = new StringBuilder();
+        for (User user : users) {
+            stringBuilder.append("name : " + user.getName() + " | number of wins : " + user.getNoOfWins() + "\n");
+        }
+        return stringBuilder.toString();
     }
 }

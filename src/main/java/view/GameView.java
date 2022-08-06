@@ -2,10 +2,12 @@ package view;
 
 import controller.GameController;
 import Enum.*;
+
 import java.util.Scanner;
 
-public class GameView extends Menu{
+public class GameView extends Menu {
     private final GameController gameController;
+
     public GameView(Scanner scanner, GameController gameController) {
         super(scanner);
         this.gameController = gameController;
